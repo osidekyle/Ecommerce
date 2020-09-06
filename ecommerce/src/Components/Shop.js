@@ -9,7 +9,7 @@ const Shop = () => {
 
 
     return ( 
-        <div className="container">
+        <div className="container d-flex justify-content-center">
             <h1>Products</h1>
         </div>
      );

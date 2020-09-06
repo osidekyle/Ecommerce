@@ -9,7 +9,7 @@ const Cart = () => {
 
 
     return ( 
-        <div className="container">
+        <div className="container d-flex justify-content-center">
             <h1>Your Cart</h1>
         </div>
      );
