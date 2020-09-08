@@ -15,7 +15,7 @@ const ItemDetail = ({match}) => {
         };
         console.log(match)
         
-        let data= await fetch(`https://www.cheapshark.com/api/1.0/games?steamAppID=${match.params.id}&limit=60&exact=0`, requestOptions)
+        let data= await fetch(`https://www.cheapshark.com/api/1.0/games?title=${match.params.id}&limit=60&exact=0`, requestOptions)
        .catch(error=>console.log('error'))   
         let item=await data.json()
         console.log(item)

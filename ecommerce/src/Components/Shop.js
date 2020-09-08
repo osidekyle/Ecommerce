@@ -56,7 +56,7 @@ const Shop = () => {
                 </div>
                
                 <div className="row">
-                <Link to={`/products/${item.steamAppID }`}><button className="btn btn-success">Details</button></Link>
+                <Link to={`/products/${item.external }`}><button className="btn btn-success">Details</button></Link>
                 </div>
                 </div>
             ))}
