@@ -7,6 +7,7 @@ import Home from "./Components/Home"
 import Shop from "./Components/Shop"
 import About from "./Components/About"
 import Cart from "./Components/Cart"
+import ItemDetail from "./Components/ItemDetail"
 
 function App() {
   return (
@@ -15,13 +16,12 @@ function App() {
       <Nav/>
       <Switch>
       <Route path="/" exact component={Home}/>
-      <Route path="/products" component={Shop}/>
+      <Route path="/products" exact component={Shop}/>
       <Route path="/cart"  component={Cart}/>
       <Route path="/about" component={About}/>
-      {/*
-      <Route path="/shop/:id"  component={ItemDetail}/>
+      <Route path="/products/:id"  component={ItemDetail}/>
       
-      */}
+      
       </Switch>
     </div>
     </Router>

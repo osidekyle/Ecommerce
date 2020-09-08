@@ -32,11 +32,11 @@ const Nav = () => {
         <nav className="navbar navbar-dark bg-dark navbar-inverse navbar-expand-lg navbar-fixed-top">
             <div style={navStuffStyle} className="container-fluid">
                 <div className="navbar-header">
-                    <Link  class="nav-link" style={brandStyle} to="/">Brand Name</Link>
+                    <Link  className="nav-link" style={brandStyle} to="/">Brand Name</Link>
                 </div>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarText">
@@ -47,7 +47,7 @@ const Nav = () => {
                 
                 </ul>
                 <ul className="nav navbar-nav navbar-right">
-                <li><Link to="/cart" class="nav-link ml-3" style={navStuffStyle}>{numberOfItems}<FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Link></li>
+                <li><Link to="/cart" className="nav-link ml-3" style={navStuffStyle}>{numberOfItems}<FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Link></li>
                 </ul>
                 </div>
 
