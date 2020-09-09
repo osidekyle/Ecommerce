@@ -1,8 +1,9 @@
-import React, { useState, useEffect} from 'react';
-
+import React, { useState, useEffect, useContext} from 'react';
+import {GlobalContext} from "../Context/GlobalState"
 
 const ItemDetail = ({match}) => {
     
+    const {addItem}=useContext(GlobalContext)
 
     const [item,setItem]=useState({});
 
@@ -30,6 +31,10 @@ const ItemDetail = ({match}) => {
 
     },[])
 
+    const addToCart=()=>{
+        addItem(item);
+        console.log("item added")
+    }
 
 
 
@@ -37,7 +42,8 @@ const ItemDetail = ({match}) => {
         <React.Fragment>
         <h1>{item.external}</h1>
         <img src={item.thumb}></img>
-        <button className="btn btn-warning">Add To Cart</button>
+        <h4>${item.gameID}</h4>
+        <button className="btn btn-warning" onClick={addToCart}>Add To Cart</button>
         </React.Fragment>
      );
 }

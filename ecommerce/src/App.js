@@ -8,9 +8,12 @@ import Shop from "./Components/Shop"
 import About from "./Components/About"
 import Cart from "./Components/Cart"
 import ItemDetail from "./Components/ItemDetail"
+import {GlobalProvider} from "./Context/GlobalState"
+import Checkout from "./Components/Checkout"
 
 function App() {
   return (
+    <GlobalProvider>
     <Router>
     <div className="App">
       <Nav/>
@@ -20,11 +23,12 @@ function App() {
       <Route path="/cart"  component={Cart}/>
       <Route path="/about" component={About}/>
       <Route path="/products/:id"  component={ItemDetail}/>
-      
+      <Route path="/checkout" component={Checkout}/>
       
       </Switch>
     </div>
     </Router>
+    </GlobalProvider>
   );
 }
 

@@ -43,7 +43,7 @@ const Shop = () => {
             <h1>Products</h1>
             <div className="search-area">
                 <input type="text" onChange={addSearch}></input>
-                <button onClick={()=>getItems()}>Search</button>
+                <button className="btn btn-secondary" onClick={()=>getItems()}>Search</button>
             </div>
             <div className="col-xs-12 mt-5">
             {items.map((item)=>(
@@ -53,6 +53,9 @@ const Shop = () => {
                 </div>
                 <div className="row">
                 <h1>{item.external}</h1>
+                </div>
+                <div className="row">
+                <h1>${item.gameID}</h1>
                 </div>
                
                 <div className="row">

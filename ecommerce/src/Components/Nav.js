@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useContext, useEffect} from 'react';
 import $ from "jquery"
 import "../../../node_modules/bootstrap/dist/css/bootstrap.css"
 import { FontAwesomeIcon } from '../../../node_modules/@fortawesome/react-fontawesome'
@@ -6,6 +6,7 @@ import '../../../node_modules/@fortawesome/fontawesome-svg-core'
 import { faShoppingCart } from '../../../node_modules/@fortawesome/free-solid-svg-icons'
 import Popper from "popper.js"
 import {Link} from "react-router-dom"
+import { GlobalContext } from '../Context/GlobalState';
 
 
 
@@ -13,8 +14,14 @@ import {Link} from "react-router-dom"
 
 const Nav = () => {
     const [numberOfItems,setNumberOfItems]=useState(0)
-  
+    const {items} = useContext(GlobalContext)
     
+    useEffect(()=>{
+        setNumberOfItems(items.length)
+    })
+
+
+
     const navStuffStyle={
         color:"white",
         fontSize:"100%"
