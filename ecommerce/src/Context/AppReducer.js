@@ -9,6 +9,10 @@ export default (state, action) =>{
             return{
                 ...state,items: [action.payload,...state.items]
             }
+        case "EMPTY":
+            return{
+                ...state,items: []
+            }
         default:
             return state;
     }

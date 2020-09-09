@@ -25,9 +25,14 @@ export const GlobalProvider=({children})=>{
             payload:id
         })
     }
+    const empty=()=>{
+        dispatch({
+            type:"EMPTY"
+        })
+    }
 
 
-return (<GlobalContext.Provider value={{items:state.items,addItem, deleteItem}}>{children}</GlobalContext.Provider>)
+return (<GlobalContext.Provider value={{items:state.items,addItem, deleteItem, empty}}>{children}</GlobalContext.Provider>)
 
 
 }

@@ -13,6 +13,7 @@ const Cart = () => {
     const removeItem=(e)=>{
         deleteItem(e.target.id)
     }
+    
 
     return ( 
         <div className="container d-flex justify-content-center">

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {GlobalContext} from "../Context/GlobalState"
 
 
@@ -6,6 +6,10 @@ const Checkout = () => {
 
 
     const {items} = useContext(GlobalContext)
+    const {empty}= useContext(GlobalContext)
+
+    
+
 
     return ( 
         <React.Fragment>
