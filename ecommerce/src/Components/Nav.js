@@ -36,7 +36,7 @@ const Nav = () => {
     return ( 
             
         
-        <nav className="navbar navbar-dark bg-dark navbar-inverse navbar-expand-lg navbar-fixed-top">
+        <nav className="navbar navbar-dark bg-dark navbar-inverse navbar-expand-lg navbar-fixed-top navbar-default">
             <div style={navStuffStyle} className="container-fluid">
                 <div className="navbar-header">
                     <Link  className="nav-link" style={brandStyle} to="/">Brand Name</Link>

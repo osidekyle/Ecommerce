@@ -30,6 +30,10 @@ const Shop = () => {
 
 
     },[])
+    const productStyle={
+        width:"2%",
+        height:"50%"
+    }
    
     const addSearch = (e)=>{
         console.log("search")
@@ -38,16 +42,16 @@ const Shop = () => {
     }
 
     return ( 
-        <div className="container d-flex justify-content-center">
+        <div >
            
             <h1>Products</h1>
             <div className="search-area">
                 <input type="text" onChange={addSearch}></input>
                 <button className="btn btn-secondary" onClick={()=>getItems()}>Search</button>
             </div>
-            <div className="col-xs-12 mt-5">
+            <div className=" mt-5">
             {items.map((item)=>(
-                <div className="item container d-flex justify-content center mt-5">
+                <div className="mt-5" style={productStyle}>
                 <div className="row">
                 <img src={item.thumb}></img>
                 </div>
