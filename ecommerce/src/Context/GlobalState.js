@@ -3,7 +3,8 @@ import AppReducer from "./AppReducer"
 
 
 const initalState={
-    items:[]
+    items:[],
+    checkouts:[]
 }
 
 
@@ -30,9 +31,14 @@ export const GlobalProvider=({children})=>{
             type:"EMPTY"
         })
     }
+    const setCheckouts=()=>{
+        dispatch({
+            type:"SET_CHECKOUTS"
+        })
+    }
 
 
-return (<GlobalContext.Provider value={{items:state.items,addItem, deleteItem, empty}}>{children}</GlobalContext.Provider>)
+return (<GlobalContext.Provider value={{items:state.items,checkouts:state.checkouts,setCheckouts,addItem, deleteItem, empty}}>{children}</GlobalContext.Provider>)
 
 
 }

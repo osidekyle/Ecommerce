@@ -9,11 +9,15 @@ const Cart = () => {
 
     const {items} = useContext(GlobalContext)
     const {deleteItem} = useContext(GlobalContext)
+    const {setCheckouts}=useContext(GlobalContext)
 
     const removeItem=(e)=>{
         deleteItem(e.target.id)
     }
-    
+    const checks=()=>{
+        console.log('checks')
+        setCheckouts()
+    }
 
     return ( 
         <div className="container d-flex justify-content-center">
@@ -29,7 +33,7 @@ const Cart = () => {
             <div className="total row">
                 <h1>Total</h1>
                 {items.reduce((a,b)=>(parseInt(a)+parseInt(b.gameID)),0)}
-                <Link to="/checkout"><button className="checkout-btn btn btn-primary">Checkout</button></Link>
+                <Link to="/checkout"><button onClick={checks} className="checkout-btn btn btn-primary">Checkout</button></Link>
             </div>
         </div>
      );

@@ -13,6 +13,10 @@ export default (state, action) =>{
             return{
                 ...state,items: []
             }
+        case "SET_CHECKOUTS":
+            return{
+                ...state,checkouts: [...state.items]
+            }
         default:
             return state;
     }
