@@ -4,3 +4,39 @@
   box-sizing: border-box;
 }
 
+.item{
+  transition:.3s ease all
+}
+
+.item:hover{
+  transform: scale(1.1);
+  box-shadow:5px 10px #747474;
+}
+
+
+
+.details:hover{
+  background-color:"9f9fdf"
+}
+
+.page{
+  transition:.3s ease all
+}
+
+.page:hover{
+  transform: scale(1.2);
+  
+}
+
+#root{
+  background:"#f0f0f5";
+}
+
+
+.cart{
+  transition: .3s ease all;
+}
+.cart:hover{
+  transform:scale(1.2)
+  
+}

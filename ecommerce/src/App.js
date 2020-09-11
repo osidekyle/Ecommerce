@@ -12,6 +12,9 @@ import {GlobalProvider} from "./Context/GlobalState"
 import Checkout from "./Components/Checkout"
 
 function App() {
+  
+  
+
   return (
     <GlobalProvider>
     <Router>

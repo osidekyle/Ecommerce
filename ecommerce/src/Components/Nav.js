@@ -24,22 +24,29 @@ const Nav = () => {
 
     const navStuffStyle={
         color:"white",
-        fontSize:"100%"
+        fontSize:"60%"
     }
 
     const brandStyle={
         color:"white",
-        fontSize:"200%"
+        fontSize:"700%"
+    }
+    const cartStyle={
+        fontSize:"300%",
+        color:"white"
     }
 
-
+    const navStyle={
+       background:" #718db7",
+       clipPath: "polygon( 0 0%,100% 0,100% 77%,0 100%"
+    }
     return ( 
             
         
-        <nav className="navbar navbar-dark bg-dark navbar-inverse navbar-expand-lg navbar-fixed-top navbar-default">
+        <nav style={navStyle} className="navbar navbar-light navbar-inverse navbar-expand-lg navbar-fixed-top navbar-default">
             <div style={navStuffStyle} className="container-fluid">
                 <div className="navbar-header">
-                    <Link  className="nav-link" style={brandStyle} to="/">Brand Name</Link>
+                    <Link  className="nav-link display-1" style={brandStyle} to="/">Gamez</Link>
                 </div>
 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,13 +55,13 @@ const Nav = () => {
 
                 <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav nav mr-auto">
-                <li  className="active  ml-3 nav-item"><Link to="/" className="nav-link" style={navStuffStyle}> Home</Link></li>
-                <li className="nav-item ml-3 "><Link to="/products" className="nav-link" style={navStuffStyle}>Products</Link></li>
-                <li className="nav-item ml-3 ">  <Link to="/about" className="nav-link" style={navStuffStyle}> About</Link></li>
+                <li  className="active page display-4 ml-5 nav-item"><Link to="/" className="nav-link " style={navStuffStyle}> Home</Link></li>
+                <li className="nav-item page  display-4 ml-5 "><Link to="/products" className="nav-link" style={navStuffStyle}>Products</Link></li>
+                <li className="nav-item page  display-4  ml-5 ">  <Link to="/about" className="nav-link" style={navStuffStyle}> About</Link></li>
                 
                 </ul>
                 <ul className="nav navbar-nav navbar-right">
-                <li><Link to="/cart" className="nav-link ml-3" style={navStuffStyle}>{numberOfItems}<FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Link></li>
+                <li><Link to="/cart" className="nav-link cart ml-5" style={cartStyle}>{numberOfItems}<FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Link></li>
                 </ul>
                 </div>
 
