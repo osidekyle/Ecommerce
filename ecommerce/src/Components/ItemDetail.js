@@ -47,7 +47,8 @@ const ItemDetail = ({match}) => {
     }
 
     const titleStyle={
-        color:"white"
+        color:"white",
+        fontSize:"400%"
     }
 
     const moneyStyle={
