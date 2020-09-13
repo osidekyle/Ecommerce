@@ -38,12 +38,13 @@ const Nav = () => {
 
     const navStyle={
        background:" #718db7",
-       clipPath: "polygon( 0 0%,100% 0,100% 77%,0 100%"
+       opacity:"0.9",
+       clipPath: "polygon( 0 0%,100% 0,100% 85%,0 100%"
     }
     return ( 
             
         
-        <nav style={navStyle} className="navbar navbar-light navbar-inverse navbar-expand-lg navbar-fixed-top navbar-default">
+        <nav style={navStyle} className="navbar navbar-light navbar-inverse navbar-expand-lg fixed-top navbar-default">
             <div style={navStuffStyle} className="container-fluid">
                 <div className="navbar-header">
                     <Link  className="nav-link display-1" style={brandStyle} to="/">Gamez</Link>

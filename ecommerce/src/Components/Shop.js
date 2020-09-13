@@ -68,6 +68,14 @@ const Shop = () => {
         setSearch(e.target.value)
     }
 
+
+    const checkKey=(event)=>{
+        if(event.key==="Enter")
+        {
+                getItems();
+        }
+    }
+
     const imgStyle={
         maxHeight:"150px",
         minHeight:"100%",
@@ -158,7 +166,7 @@ const spanStyle={
                 <div className="row mt-5 justify-content-end" style={inputStyle}>
                     
                     <div style={searchsStyle} className="col-sm-6 col-md-6 col-xs-8">
-                <input type="text" className="searchBar"  onChange={addSearch}></input>
+                <input type="text" className="searchBar"  onKeyPress={checkKey} onChange={addSearch}></input>
                 <button style={searchButtonStyle}   className="btn  btn-secondary" onClick={()=>getItems()}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></button>
                 </div>
                 <div  className="col-sm-3 col-md-3 col-xs-4">
