@@ -21,7 +21,7 @@ const Shop = () => {
           redirect: 'follow'
         };
         
-        await fetch(`https://www.cheapshark.com/api/1.0/games?title=${search}&limit=60&exact=0`, requestOptions)
+        await fetch(`https://www.cheapshark.com/api/1.0/deals?title=${search}&limit=60&exact=0`, requestOptions)
           .then(response => response.json())
           .then(result => setItems(result))
           //.then(result=>console.log(result))
@@ -37,12 +37,12 @@ const Shop = () => {
     },[])
     const lowHigh=()=>{
         let newItems=items.slice()
-        newItems.sort((a,b)=>(a.gameID-b.gameID))
+        newItems.sort((a,b)=>(a.normalPrice-b.normalPrice))
         setItems(newItems)
     }
     const highLow=()=>{
         let newItems=items.slice()
-        newItems.sort((a,b)=>(b.gameID-a.gameID))
+        newItems.sort((a,b)=>(b.normalPrice-a.normalPrice))
         setItems(newItems)
     }
 
@@ -188,12 +188,12 @@ const spanStyle={
                 <div  style={spanStyle} className="mt-4 mb-5">
                 <img src={item.thumb} style={imgStyle}></img>
                 <span style={innerStyle} >
-                <p>{item.external}</p>
-                <p>${item.gameID}</p>
+                <p>{item.title}</p>
+                <p>${item.normalPrice}</p>
                 
                 </span>
                 </div>
-                <Link  to={`/products/${item.external }`}><button style={buttonStyle}  className="btn details btn-success">Details</button></Link>
+                <Link  to={`/products/${item.title }`}><button style={buttonStyle}  className="btn details btn-success">Details</button></Link>
                 </div>
             ))}
             </div>

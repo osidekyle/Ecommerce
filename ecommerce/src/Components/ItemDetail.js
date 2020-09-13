@@ -21,12 +21,16 @@ const ItemDetail = ({match}) => {
         };
         console.log(match)
         
-        let data= await fetch(`https://www.cheapshark.com/api/1.0/games?title=${match.params.id}&limit=60&exact=0`, requestOptions)
+        let data= await fetch(`https://www.cheapshark.com/api/1.0/deals?title=${match.params.id}&limit=60&exact=0`, requestOptions)
        .catch(error=>console.log('error'))   
         let item=await data.json()
         console.log(item)
         
-        setItem(item[0])
+        for(let thing of item){
+            if (thing.title==match.params.id){
+                setItem(thing)
+            }
+        }
      
     }
 
@@ -68,9 +72,9 @@ const ItemDetail = ({match}) => {
         <div className="container">
         <div className="row justify-content-center">
         <div style={detailStyle} className="detail col-xs-12">
-        <h1 className="display-1" style={titleStyle}>{item.external}</h1>
+        <h1 className="display-1" style={titleStyle}>{item.title}</h1>
         <img style={imageStyle} className="mt-3" src={item.thumb}></img>
-        <h4 className="display-4 mt-3" style={moneyStyle}>${item.gameID}</h4>
+        <h4 className="display-4 mt-3" style={moneyStyle}>${item.normalPrice}</h4>
         <button className="btn btn-warning mb-5 mt-3" style={buttonStyle} onClick={addToCart}>Add To Cart<FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></button>
         <p className="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nibh ac ante mollis mattis sed sed sapien. In risus justo, hendrerit a congue eget, iaculis at ex. Sed quis volutpat quam, non viverra arcu. Cras vel eros sagittis, eleifend lectus in, semper diam. Nullam at odio convallis, ullamcorper augue quis, fringilla felis. Pellentesque elementum efficitur molestie. Sed imperdiet facilisis sem, at semper nisl pretium ut.</p>
         </div>
