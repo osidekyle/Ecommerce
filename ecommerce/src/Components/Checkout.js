@@ -44,7 +44,7 @@ const Checkout = () => {
                 <h4 className="display-4">${item.normalPrice}</h4>
                 </div>
             ))}
-            <Link to="/products"><button style={buttonStyle} className="btn px-5 py-3">Back To Shopping</button></Link>
+            <Link to="/products"><button style={buttonStyle} className="btn px-5 mb-5 py-3">Back To Shopping</button></Link>
     </div>
     </div>
     );

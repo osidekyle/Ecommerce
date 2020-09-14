@@ -56,13 +56,13 @@ const Nav = () => {
 
                 <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav nav mr-auto">
-                <li  className="active page display-4 ml-5 nav-item"><Link to="/" className="nav-link " style={navStuffStyle}> Home</Link></li>
-                <li className="nav-item page  display-4 ml-5 "><Link to="/products" className="nav-link" style={navStuffStyle}>Products</Link></li>
-                <li className="nav-item page  display-4  ml-5 ">  <Link to="/about" className="nav-link" style={navStuffStyle}> About</Link></li>
+                <li data-toggle="collapse" data-target=".navbar-collapse" className="active page display-4 ml-5 nav-item"><Link to="/" className="nav-link " style={navStuffStyle}> Home</Link></li>
+                <li data-toggle="collapse" data-target=".navbar-collapse" className="nav-item page  display-4 ml-5 "><Link to="/products" className="nav-link" style={navStuffStyle}>Products</Link></li>
+                <li data-toggle="collapse" data-target=".navbar-collapse" className="nav-item page  display-4  ml-5 ">  <Link to="/about" className="nav-link" style={navStuffStyle}> About</Link></li>
                 
                 </ul>
                 <ul className="nav navbar-nav navbar-right">
-                <li><Link to="/cart" className="nav-link cart ml-5" style={cartStyle}>{numberOfItems}<FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Link></li>
+                <li data-toggle="collapse" data-target=".navbar-collapse"><Link to="/cart" className="nav-link cart ml-5" style={cartStyle}>{numberOfItems}<FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Link></li>
                 </ul>
                 </div>
 
