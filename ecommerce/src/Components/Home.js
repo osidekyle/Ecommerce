@@ -8,7 +8,7 @@ const Home = () => {
 
 
     const topStyle={
-        color:" #718db7",
+        color:"  #718db7",
         textAlign:"center",
         
     }

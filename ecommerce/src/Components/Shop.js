@@ -12,10 +12,11 @@ const Shop = () => {
 
     const [items,setItems]=useState([]);
     const [search, setSearch]= useState("batman")
+    const selector=useRef(null)
 
     const getItems= async()=>{
         var formdata = new FormData();
-
+        selector.current.selectedIndex=0;
         var requestOptions = {
           method: 'GET',
           redirect: 'follow'
@@ -70,8 +71,9 @@ const Shop = () => {
 
 
     const checkKey=(event)=>{
-        if(event.key==="Enter")
+        if(event.key==="Enter" && search.trim() !== "")
         {
+                
                 getItems();
         }
     }
@@ -112,21 +114,10 @@ const spanStyle={
        border:"#c2cee1"
    }
 
-   const topStyle={
-       textAlign:"center",
-       color:"white",
-       
-       fontSize:"500%"
-   }
+   
 
 
-   const searchStyle={
-    border:"none",
-    height:"32px",
-    width:"70%",
-    borderRadius:"5px",
-
-   }
+   
 
    const searchButtonStyle={
     background:"#c2cee1",
@@ -139,20 +130,14 @@ const spanStyle={
    const searchsStyle={
       textAlign:"center"
    }
-   const sortingStyle={
-       textAlign:"center"
-   }
+   
 
    const inputStyle={
-       color:"white",
+       color:" #718db7",
    }
 
-   const optionStyle={
-     
-   }
-
+  
    const selectStyle={
-     
     width:"65%"
    }
 
@@ -162,7 +147,7 @@ const spanStyle={
     return ( 
         <div className="container" >
            <div >
-            <h1  className="shoptitle">Products</h1>
+            <h1  style={{color:" #718db7"}} className="shoptitle">Products</h1>
                 <div className="row mt-5 justify-content-end" style={inputStyle}>
                     
                     <div style={searchsStyle} className="col-sm-6 col-md-6 col-xs-8">
@@ -170,9 +155,9 @@ const spanStyle={
                 <button style={searchButtonStyle}   className="btn  btn-secondary" onClick={()=>getItems()}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></button>
                 </div>
                 <div  className="col-sm-3 col-md-3 col-xs-4">
-                <div className="row options" style={optionStyle}>
+                <div className="row options" >
                     <h4 style={sortStyle} className="display-4">Sort by:</h4>
-                <select className=" ml-1 custom-select" style={selectStyle} onChange={changed}>
+                <select ref={selector} className=" ml-1 custom-select" style={selectStyle} onChange={changed}>
                     <option>Relevance</option>
                     <option >Price Low-High</option>
                     <option>Price High-Low</option>

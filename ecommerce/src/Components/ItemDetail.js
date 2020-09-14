@@ -51,18 +51,16 @@ const ItemDetail = ({match}) => {
     }
 
     const titleStyle={
-        color:"white",
+        color: "#718db7",
         fontSize:"400%"
     }
 
     const moneyStyle={
-        color:"white",
+        color:" #718db7",
 
     }
 
-    const imageStyle={
-      
-    }
+   
 
     const detailStyle={
         textAlign:"center"
@@ -73,7 +71,7 @@ const ItemDetail = ({match}) => {
         <div className="row justify-content-center">
         <div style={detailStyle} className="detail col-xs-12">
         <h1 className="display-1" style={titleStyle}>{item.title}</h1>
-        <img style={imageStyle} className="mt-3" src={item.thumb}></img>
+        <img className="mt-3" src={item.thumb}></img>
         <h4 className="display-4 mt-3" style={moneyStyle}>${item.normalPrice}</h4>
         <button className="btn btn-warning mb-5 mt-3" style={buttonStyle} onClick={addToCart}>Add To Cart<FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></button>
         <p className="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nibh ac ante mollis mattis sed sed sapien. In risus justo, hendrerit a congue eget, iaculis at ex. Sed quis volutpat quam, non viverra arcu. Cras vel eros sagittis, eleifend lectus in, semper diam. Nullam at odio convallis, ullamcorper augue quis, fringilla felis. Pellentesque elementum efficitur molestie. Sed imperdiet facilisis sem, at semper nisl pretium ut.</p>
